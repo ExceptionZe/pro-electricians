@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrician Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Language Switcher -->
+    <nav>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('sk')">Slovak</button>
+        <button onclick="changeLanguage('de')">German</button>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1 data-lang="title">Electrician Portfolio</h1>
+    </header>
+
+    <!-- Image Gallery -->
+    <section id="gallery">
+        <h2 data-lang="work">My Work</h2>
+        <div class="images">
+            <img src="images/image1.jpg" alt="Work 1">
+            <img src="images/image2.jpg" alt="Work 2">
+            <img src="images/image3.jpg" alt="Work 3">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 data-lang="contact">Contact Me</h2>
+        <p><span data-lang="email">Email: </span><a href="mailto:youremail@gmail.com">youremail@gmail.com</a></p>
+        
+        <form id="contactForm">
+            <label for="name" data-lang="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="message" data-lang="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit" data-lang="send">Send</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

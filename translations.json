@@ -1,0 +1,29 @@
+{
+    "en": {
+        "title": "Electrician Portfolio",
+        "work": "My Work",
+        "contact": "Contact Me",
+        "email": "Email: ",
+        "name": "Name:",
+        "message": "Message:",
+        "send": "Send"
+    },
+    "sk": {
+        "title": "Portfólio Elektrikára",
+        "work": "Moja Práca",
+        "contact": "Kontakt",
+        "email": "Email: ",
+        "name": "Meno:",
+        "message": "Správa:",
+        "send": "Odoslať"
+    },
+    "de": {
+        "title": "Elektriker Portfolio",
+        "work": "Meine Arbeit",
+        "contact": "Kontakt",
+        "email": "E-Mail: ",
+        "name": "Name:",
+        "message": "Nachricht:",
+        "send": "Senden"
+    }
+}
