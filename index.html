@@ -3,49 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electrician Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>AZ Bau</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/AZBauLogo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="dark-theme">
 
-    <!-- Language Switcher -->
-    <nav>
-        <button onclick="changeLanguage('en')">English</button>
-        <button onclick="changeLanguage('sk')">Slovak</button>
-        <button onclick="changeLanguage('de')">German</button>
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <h1 data-lang="title">Electrician Portfolio</h1>
+    <header class="header" data-header>
+        <div class="container">
+            <h1 class="h1 logo">
+                <a href="#">AZ<span>Bau</span></a>
+            </h1>
+            <div class="navbar-actions">
+                <select name="language" id="lang">
+                    <option value="de" selected>DE</option>
+                    <option value="en">EN</option>
+                    <option value="sk">SK</option>
+                </select>
+                <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn><span class="icon"></span></button>
+            </div>
+            <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+            </button>
+            <nav class="navbar" data-navbar>
+                <ul class="navbar-list">
+                    <li><a href="#home" class="navbar-link" data-lang="home">Startseite</a></li>
+                    <li><a href="#about" class="navbar-link" data-lang="about">Über mich</a></li>
+                    <!-- <li><a href="#skills" class="navbar-link" data-lang="skills">Fähigkeiten</a></li> -->
+                    <li><a href="#portfolio" class="navbar-link" data-lang="portfolio">Portfolio</a></li>
+                    <li><a href="#contact" class="navbar-link" data-lang="contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Image Gallery -->
-    <section id="gallery">
-        <h2 data-lang="work">My Work</h2>
-        <div class="images">
-            <img src="images/image1.jpg" alt="Work 1">
-            <img src="images/image2.jpg" alt="Work 2">
-            <img src="images/image3.jpg" alt="Work 3">
-        </div>
-    </section>
+    <main>
+        <article class="container">
+            <section class="hero" id="home">
+                <figure class="hero-banner">
+                    <picture>
+                        <source srcset="https://i.postimg.cc/qgfKBWnD/hero-banner.png" media="(min-width: 768px)">
+                        <source srcset="https://i.postimg.cc/ncZ75fFM/hero-banner-md.png" media="(min-width: 500px)">
+                        <img src="https://i.postimg.cc/2yLvDCqB/hero-banner-sm.png" alt="A man with blue shirt" class="w-100">
+                    </picture>
+                </figure>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 data-lang="contact">Contact Me</h2>
-        <p><span data-lang="email">Email: </span><a href="mailto:youremail@gmail.com">youremail@gmail.com</a></p>
-        
-        <form id="contactForm">
-            <label for="name" data-lang="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="message" data-lang="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit" data-lang="send">Send</button>
-        </form>
-    </section>
+                <div class="hero-content">
+                    <h2 class="h2 hero-title" data-lang="hero_title">Wir kümmern uns um alles von A bis Z</h2>
+                    <!-- <h2 class="h2 hero-title">
+                        <span class="typing-text" data-lang="hero_title">
+                          Wir kümmern uns um alles von A bis Z
+                        </span>
+                    </h2>                       -->
+                    <a href="#contact" class="btn btn-primary" data-lang="contact_us_button">Kontaktieren Sie uns</a>
+                </div>
+
+                <ul class="hero-social-list">
+                    <li>
+                        <a href="#" class="hero-social-link">
+                            <i class="ri-facebook-fill"></i>
+                            <div class="tooltip">Facebook</div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="hero-social-link">
+                            <i class="ri-twitter-x-line"></i>
+                            <div class="tooltip">Twitter-X</div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="hero-social-link">
+                            <i class="ri-linkedin-fill"></i>
+                            <div class="tooltip">Linkedin</div>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="#stats" class="scroll-down">Scroll</a>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="h1 logo">
+                <a href="#">AZ<span>Bau</span></a>
+            </p>
+
+            <p class="copyright">&copy; 2025 <a href="https://github.com/ExceptionZe" target="_blank">DEVELOPER</a>. All rights reserved</p>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top " data-go-top title="Go to Top"><ion-icon name="arrow-up"></ion-icon></a>
 
     <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
