@@ -431,25 +431,30 @@ textarea.input-field { min-height: 60px; height: 120px; max-height: 200px; resiz
     .about-banner { max-width: 450px; }
 }
 
-/*
-.typing-text {
+/* .typing-loop {
+    display: inline-block;
+    border-right: 2px solid #ff7f50;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.typed-text {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid #ff7f50; /* caret color */
-    /* animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
-    font-weight: 600;
-    font-size: 28px;
-    max-width: 100%;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blink-caret {
+    animation: typing 4s steps(36, end) infinite, blink-caret 0.75s step-end infinite;
+    border-right: 2px solid #ff7f50;
+    width: 0;
+}
+
+@keyframes typing {
+    0% { width: 0 }
+    50% { width: 31ch }
+    85% { width: 31ch }
+    100% { width: 0 }
+}
+
+@keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #ff7f50; }
-  } */
-  
+} */

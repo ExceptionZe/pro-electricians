@@ -69,21 +69,6 @@ navToggleBtn.addEventListener('click', function() {
     elemToggleFunc(document.body);
 })
 
-// // Skills Toggling Button
-
-// const toggleBtnBox = document.querySelector('[data-toggle-box]');
-// const toggleBtns = document.querySelectorAll('[data-toggle-btn]');
-// const skillsBox = document.querySelector('[data-skills-box]');
-
-// for(let i = 0; i < toggleBtns.length; i++){
-//     toggleBtns[i].addEventListener('click', function(){
-//         elemToggleFunc(toggleBtnBox);
-
-//         for(let i = 0; i < toggleBtns.length; i++) { elemToggleFunc(toggleBtns[i]); }
-//         elemToggleFunc(skillsBox);
-//     });
-// }
-
 // Dark & Light Theme Toggle
 
 const themeToggleBtn = document.querySelector('[data-theme-btn]');
