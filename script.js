@@ -100,3 +100,68 @@ if(localStorage.getItem('theme') === 'light-theme'){
     document.body.classList.remove('light-theme');
     document.body.classList.add('dark-theme');
 }
+
+// Only Load More Projects
+// const loadMoreBtn = document.querySelector('.load-more');
+// const hiddenProjects = document.querySelectorAll('.hidden-project');
+
+// loadMoreBtn.addEventListener('click', () => {
+//   hiddenProjects.forEach((project) => {
+//     project.style.display = 'block';
+//   });
+
+//   // Optional: hide the button after loading
+//   loadMoreBtn.style.display = 'none';
+// });
+
+// Load More Projects, but also hide them again
+const loadMoreBtn = document.querySelector('.load-more');
+const hiddenProjects = document.querySelectorAll('.hidden-project');
+
+// Function to update the button text
+function updateLoadMoreText(lang) {
+    const loadMoreText = loadMoreBtn.getAttribute('data-lang');
+    loadMoreBtn.textContent = translations[lang][loadMoreText];
+}
+
+loadMoreBtn.addEventListener('click', () => {
+    const areHidden = hiddenProjects[0].style.display === 'none'; // Check if the first hidden project is hidden
+
+    // Show or hide the projects
+    if (areHidden) {
+        // Show all hidden projects
+        hiddenProjects.forEach((project) => {
+            project.style.display = 'block';
+        });
+
+        // Change button text to "Show Less"
+        const currentLang = localStorage.getItem('language') || 'de';
+        loadMoreBtn.setAttribute('data-lang', 'show_less');
+        updateLoadMoreText(currentLang);
+    } else {
+        // Hide all projects again
+        hiddenProjects.forEach((project) => {
+            project.style.display = 'none';
+        });
+
+        // Change button text to "Load More Works"
+        const currentLang = localStorage.getItem('language') || 'de';
+        loadMoreBtn.setAttribute('data-lang', 'load_more');
+        updateLoadMoreText(currentLang);
+    }
+});
+
+// let scrollTimeout;
+// window.addEventListener('scroll', function() {
+//     if (scrollTimeout) clearTimeout(scrollTimeout);
+
+//     scrollTimeout = setTimeout(() => {
+//         if(window.scrollY >= 10) { 
+//             header.classList.add('active'); 
+//             goTopBtn.classList.add('active'); 
+//         } else { 
+//             header.classList.remove('active'); 
+//             goTopBtn.classList.remove('active'); 
+//         }
+//     }, 100); // Add a 100ms delay
+// });
