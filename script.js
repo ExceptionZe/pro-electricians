@@ -60,14 +60,25 @@ window.addEventListener('scroll', function(){ if(window.scrollY >= 10) { header.
 
 // Mobile Menu
 
+// Mobile Menu
 const navToggleBtn = document.querySelector('[data-nav-toggle-btn]');
 const navbar = document.querySelector('[data-navbar]');
+const navLinks = document.querySelectorAll('[data-navbar] a'); // all links inside the menu
 
 navToggleBtn.addEventListener('click', function() { 
     elemToggleFunc(navToggleBtn);
     elemToggleFunc(navbar);
     elemToggleFunc(document.body);
-})
+});
+
+// Close menu when a link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', function() {
+    navToggleBtn.classList.remove('active');
+    navbar.classList.remove('active');
+    document.body.classList.remove('active');
+  });
+});
 
 // Dark & Light Theme Toggle
 
