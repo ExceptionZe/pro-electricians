@@ -301,7 +301,7 @@ main { overflow-x: hidden; }
 .project-list > li { margin-bottom: 25px; }
 .project-card { position: relative; overflow: hidden; border-radius: var(--radius-12); box-shadow: 2px 4px 6px hsla(0, 0%, 0%, 0.2); }
     .project-card::after { content: ''; position: absolute; inset: 0; border-radius: inherit; transition: var(--transition-1); }
-    .project-card:is(:hover, :focus)::after { background: hsla(0, 0%, 100%, 0.1);}
+    .project-card:is(:hover, :focus)::after { background: hsla(0, 0%, 100%, 0.1); cursor: pointer;}
     .project-card .card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; }
     .project-card .card-title { margin-bottom: 10px; }
         .project-card :is(.card-title, .publish-date){ 
