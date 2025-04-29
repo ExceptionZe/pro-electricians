@@ -14,26 +14,26 @@ fetch('translations.json')
     })
     .catch(error => console.error("Error loading translations:", error));
 
-// Function to change language
 function changeLanguage(lang) {
     if (!translations[lang]) return;
-
-    // Apply translations to elements
+    
     document.querySelectorAll("[data-lang]").forEach(el => {
         const key = el.getAttribute("data-lang");
         const translation = translations[lang][key];
-        if (translation) {
-            el.innerText = translation;
+        if (!translation) return;
+    
+        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.placeholder = translation;
+        } else {
+        el.innerText = translation;
         }
     });
-
-    // Update dropdown to reflect current language
+    
     const langSelector = document.getElementById("lang");
     if (langSelector && langSelector.value !== lang) {
         langSelector.value = lang;
     }
-
-    // Store language in localStorage
+    
     localStorage.setItem('language', lang);
 }
 
