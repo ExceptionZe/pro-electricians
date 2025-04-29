@@ -112,19 +112,6 @@ if(localStorage.getItem('theme') === 'light-theme'){
     document.body.classList.add('dark-theme');
 }
 
-// Only Load More Projects
-// const loadMoreBtn = document.querySelector('.load-more');
-// const hiddenProjects = document.querySelectorAll('.hidden-project');
-
-// loadMoreBtn.addEventListener('click', () => {
-//   hiddenProjects.forEach((project) => {
-//     project.style.display = 'block';
-//   });
-
-//   // Optional: hide the button after loading
-//   loadMoreBtn.style.display = 'none';
-// });
-
 // Load More Projects, but also hide them again
 const loadMoreBtn = document.querySelector('.load-more');
 const hiddenProjects = document.querySelectorAll('.hidden-project');
@@ -160,6 +147,53 @@ loadMoreBtn.addEventListener('click', () => {
         loadMoreBtn.setAttribute('data-lang', 'load_more');
         updateLoadMoreText(currentLang);
     }
+});
+
+// Handle Form Submission and Feedback
+
+const form = document.querySelector('.contact-form');
+const submitBtn = form.querySelector('button[type="submit"]');
+const statusDiv = document.getElementById('form-status');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const currentLang = localStorage.getItem('language') || 'de';
+
+  // Disable button & show loading message
+  const loadingText = translations[currentLang]?.form_loading || 'Sending...';
+  const originalText = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = loadingText;
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method || 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      const successMessage = translations[currentLang]?.form_success || 'Message sent successfully!';
+      statusDiv.textContent = successMessage;
+      statusDiv.className = 'form-status success';
+      form.reset();
+    } else {
+      throw new Error('Submission failed');
+    }
+  } catch (error) {
+    const errorMessage = translations[currentLang]?.form_error || 'An error occurred. Please try again.';
+    statusDiv.textContent = errorMessage;
+    statusDiv.className = 'form-status error';
+  }
+
+  // Restore button
+  submitBtn.disabled = false;
+  submitBtn.textContent = translations[currentLang]?.send || originalText;
 });
 
 // let scrollTimeout;
