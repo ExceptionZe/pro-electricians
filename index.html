@@ -14,10 +14,10 @@
 
     <header class="header" data-header>
         <div class="container">
-            <h1 class="h1 logo">
+            <h1 class="h1 logo" translate="no">
                 <a href="#">AZ<span>Bau</span></a>
             </h1>
-            <div class="navbar-actions">
+            <div class="navbar-actions" translate="no">
                 <select name="language" id="lang">
                     <option value="de" selected>DE</option>
                     <option value="en">EN</option>
@@ -53,7 +53,7 @@
                 </figure>
 
                 <div class="hero-content">
-                    <h2 class="h2 hero-title" data-lang="hero_titleFinal">Wir kümmern uns um alles von A bis Z</h2>
+                    <h2 class="h2 hero-title" data-lang="hero_titleFinal" translate="no">Wir bringen Ihr Projekt von A bis Z ans Ziel</h2>
 
                     <!-- <h2 class="h2 hero-title typing-loop">
                         <span class="typed-text" data-lang="hero_titleFinal">Wir kümmern uns um alles von A bis Z</span>
@@ -64,7 +64,7 @@
                         <span class="typing-loop" data-lang="hero_titleAnimated">von A bis Z</span>
                     </h2> -->
                     
-                    <a href="#contact" class="btn btn-primary" data-lang="contact_us_button">Kontaktieren Sie uns</a>
+                    <a href="#contact" class="btn btn-primary" data-lang="contact_us_button" translate="no">Kontaktieren Sie uns</a>
                 </div>
 
                 <ul class="hero-social-list">
@@ -132,8 +132,12 @@
 
             <section class="about" id="about">
                 <figure class="about-banner">
-                    <img src="./images/druhy-typek.png" alt="About AZ Bau man" class="w-100">
-                </figure>
+                    <picture>
+                      <source srcset="webpImages/druhy-typek.webp" type="image/webp">
+                      <source srcset="images/druhy-typek.png" type="image/png">
+                      <img src="images/druhy-typek.png" alt="About AZ Bau man" class="w-100" loading="lazy">
+                    </picture>
+                  </figure>
 
                 <div class="about-content section-content">
                     <p class="section-subtitle" data-lang="about">Über uns</p>
@@ -143,7 +147,7 @@
 
                 <!-- <div class="btn-group"> -->
                     <a href="#contact">
-                        <button class="btn btn-secondary" data-lang="hire_us">Beauftragen AZ Bau</button>
+                        <button class="btn btn-secondary" data-lang="hire_us" translate="no">Beauftragen AZ Bau</button>
                     </a>
                     <!-- <button class="btn btn-primary">Download CV</button> -->
                 <!-- </div> -->
@@ -161,120 +165,159 @@
 
                     <li>
                         <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_0519.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-03">March 2025</time> -->
-                            </div>
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_0519.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_0519.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_0519.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_0519.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_0519.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
                         </div>
-                    </li>
-
+                      </li>
+                      
+                      <li>
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_4306.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_4306.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_4306.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_4306.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_4306.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li>
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_4784.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_4784.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_4784.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_4784.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_4784.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li>
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_0521.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_0521.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_0521.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_0521.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_0521.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li>
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_4785.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_4785.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_4785.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_4785.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_4785.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li>
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_0594.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_0594.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_0594.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_0594.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_0594.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li class="hidden-project" style="display:none;">
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_5126.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_5126.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_5126.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_5126.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_5126.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li class="hidden-project" style="display:none;">
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_0524.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_0524.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_0524.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_0524.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_0524.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
+                      <li class="hidden-project" style="display:none;">
+                        <div class="project-card">
+                          <figure class="card-banner">
+                            <picture>
+                              <source srcset="webpImages/IMG_5128.webp" type="image/webp" media="(min-width: 768px)">
+                              <source srcset="images/IMG_5128.jpg" type="image/jpeg" media="(min-width: 768px)">
+                              <source srcset="webpImages/IMG_5128.webp" type="image/webp" media="(min-width: 500px)">
+                              <source srcset="images/IMG_5128.jpg" type="image/jpeg" media="(min-width: 500px)">
+                              <img src="images/IMG_5128.jpg" alt="Our work" loading="lazy" class="w-100">
+                            </picture>
+                          </figure>
+                          <div class="card-content">
+                            <h3 class="h4 card-title">Berlin</h3>
+                          </div>
+                        </div>
+                      </li>
+                      
                     <li>
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_4306.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-03">February 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_4784.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-02">February 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_0521.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-02">February 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_4785.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-01">January 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_0594.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-01">January 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="hidden-project" style="display:none;">
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_5126.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-05">May 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="hidden-project" style="display:none;">
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_0524.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-05">May 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="hidden-project" style="display:none;">
-                        <div class="project-card">
-                            <figure class="card-banner">
-                                <img src="images/IMG_5128.jpg" alt="Our work" loading="lazy" width="500">
-                            </figure>
-                            <div class="card-content">
-                                <h3 class="h4 card-title">Berlin</h3>
-                                <!-- <time class="publish-date" datetime="2025-05">May 2025</time> -->
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <button class="btn btn-primary load-more" data-lang="load_more">Mehr anzeigen</button>
+                        <button class="btn btn-primary load-more" data-lang="load_more" translate="no">Mehr anzeigen</button>
                     </li>
                 </ul>
             </section>
@@ -415,7 +458,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="h1 logo">
+            <p class="h1 logo" translate="no">
                 <a href="#">AZ<span>Bau</span></a>
             </p>
 
