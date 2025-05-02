@@ -449,7 +449,7 @@ textarea.input-field { min-height: 60px; height: 120px; max-height: 200px; resiz
         .hero img { height: 100%; width: auto; margin-inline: auto; }
     .hero-content { --color-primary: var(--white); position: absolute; top: 50%; filter: drop-shadow(2px 4px 10px var(--black)); }
         .hero .btn-primary:is(:hover, :focus) { color: hsl(0, 0%, 12%); }
-    .hero-social-list { display: block; position: absolute; bottom: 550px; left: -30px; }
+    .hero-social-list { display: block; position: absolute; bottom: 92px; left: -30px; }
         .hero-social-list::after { content: ''; position: absolute; bottom: -40px; left: 13px; width: 2px; height: 30px; background: var(--color-secondary); }
     .hero-social-link { position: relative; color: var(--color-secondary); margin-block: 5px; padding: 5px; font-size: 18px; transition: var(--transition-1); }
         .hero-social-link:is(:hover, :focus) { color: var(--color-primary); }
@@ -458,7 +458,7 @@ textarea.input-field { min-height: 60px; height: 120px; max-height: 200px; resiz
     .scroll-down { 
         display: block; 
         position: absolute; 
-        bottom: 538px; 
+        bottom: 80px; 
         right: -30px; 
         color: var(--color-secondary); 
         font-size: 1.25rem; 
