@@ -53,7 +53,19 @@ body.light-theme {
 
     --shadow-1: 10px 10px 40px var(--card-shadow);
 }
+/* Added black bg for light mode */
+body.dark-theme .btn-secondary:hover,
+body.dark-theme .btn-secondary:focus {
+  background: hsl(0, 85%, 60%); /* lighter red */
+}
 
+body.light-theme .btn-secondary:hover,
+body.light-theme .btn-secondary:focus {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+/* until here */
 *,::before,::after { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 li { list-style: none; }
 a, img, time, span, input, label, select, button, textarea, ion-icon { display: block; }
