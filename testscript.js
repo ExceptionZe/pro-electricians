@@ -24,10 +24,23 @@ function changeLanguage(lang) {
 
     if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
       el.placeholder = translation;
+    } else if (key === "phone_block" || key === "email_block") {
+      el.innerHTML = translation; // allows <a> links for telefon and email - mailto
     } else {
       el.innerText = translation;
     }
   });
+
+    // ✅ ADD THIS: HREF TRANSLATIONS for WhatsApp
+  document.querySelectorAll("[data-lang-href]").forEach(el => {
+    const key = el.getAttribute("data-lang-href");
+    const translation = translations[lang]?.[key];
+
+    if (translation) {
+      el.setAttribute("href", translation);
+    }
+  });
+// until here WhatsApp above
 
   // Update select element if needed
   const langSelector = document.getElementById("lang");
