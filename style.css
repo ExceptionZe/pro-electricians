@@ -376,8 +376,8 @@ main { overflow-x: hidden; }
 .input-field { background: var(--input-bg); color: var(--color-primary); padding: 10px; padding-left: 40px; border-radius: var(--radius-12); transition: var(--transition-1); }
     .input-wrapper ion-icon { position: absolute; top: 10px; left: 10px; color: var(--color-secondary); font-size: 20px; transition: var(--transition-1); }
 textarea.input-field { min-height: 60px; height: 180px; max-height: 200px; resize: vertical; }
-    .input-field:focus { outline: 1px solid var(--raw-seinna); }
-        .input-wrapper:focus-within ion-icon { color: var(--raw-seinna); }
+    .input-field:focus { outline: 1px solid var(--color-primary); }
+        .input-wrapper:focus-within ion-icon { color: var(--color-primary); }
 .contact .btn-primary { max-width: unset; width: 100%; background: var(--color-primary); color: var(--bg-primary); }
 
 .form-status {
