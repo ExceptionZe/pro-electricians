@@ -516,14 +516,14 @@
                     </ul>
                 </div>
 
-                <!-- <form action="https://formspree.io/f/xeogeglz" method="POST" class="contact-form" autocomplete="off"></form>
-                <form action="https://formspree.io/f/mvgazawl" method="POST" class="contact-form" autocomplete="off"></form> -->
-                <form action="" method="POST" class="contact-form" autocomplete="off">
+                <!-- <form action="https://formspree.io/f/xeogeglz" method="POST" class="contact-form" autocomplete="off"> -->
+                <form action="https://formspree.io/f/mvgazawl" method="POST" class="contact-form" autocomplete="off" novalidate>
+                <!-- <form action="" method="POST" class="contact-form" autocomplete="off"> -->
                     <div class="form-wrapper">
                         <label for="name" class="form-label" data-lang="name">Name</label>
 
                         <div class="input-wrapper">
-                            <input type="text" name="name" id="name" required placeholder="Alexander Weisser" class="input-field">
+                            <input type="text" name="name" id="name" required placeholder="Alexander Weisser" pattern="^[A-Za-zÀ-ž\s'-]{2,50}$" class="input-field">
                             <ion-icon name="person-outline"></ion-icon>
                         </div>
                     </div>
@@ -541,7 +541,7 @@
                         <label for="phone" class="form-label" data-lang="phone">Telefon</label>
 
                         <div class="input-wrapper">
-                            <input type="tel" name="phone" id="phone" data-lang="phone_placeholder" required placeholder="Rufnummer" class="input-field">
+                            <input type="tel" name="phone" id="phone" data-lang="phone_placeholder" pattern="^[+0-9\s()-]{6,20}$" inputmode="tel" required placeholder="Rufnummer" class="input-field">
                             <ion-icon name="call"></ion-icon>
                         </div>
                     </div>
@@ -550,7 +550,7 @@
                         <label for="message" class="form-label" data-lang="message">Nachricht</label>
 
                         <div class="input-wrapper">
-                            <textarea name="message" id="message" class="input-field" data-lang="message_placeholder" required placeholder="Schreiben Sie Ihre Nachricht"></textarea>
+                            <textarea name="message" id="message" class="input-field" data-lang="message_placeholder" minlength="10" maxlength="1000" required placeholder="Schreiben Sie Ihre Nachricht"></textarea>
                             <ion-icon name="chatbubbles"></ion-icon>
                         </div>
                     </div>

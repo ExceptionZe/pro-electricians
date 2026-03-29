@@ -178,47 +178,85 @@ if (loadMoreBtn) {
 }
 
 // Contact Form Submission
-const form = document.querySelector('.contact-form');
-const submitBtn = form?.querySelector('button[type="submit"]');
-const statusDiv = document.getElementById('form-status');
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.contact-form');
 
-form?.addEventListener('submit', async function (e) {
-  e.preventDefault();
+  if (!form) return;
 
-  const currentLang = localStorage.getItem('language') || 'de';
-  const loadingText = translations[currentLang]?.form_loading || 'Sending...';
-  const originalText = submitBtn.textContent;
+  const phone = document.getElementById('phone');
 
-  submitBtn.disabled = true;
-  submitBtn.textContent = loadingText;
+  form.addEventListener('submit', function (e) {
+    // Reset previous custom validation
+    phone.setCustomValidity("");
 
-  const formData = new FormData(form);
-
-  try {
-    const response = await fetch(form.action, {
-      method: form.method || 'POST',
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      const successMessage = translations[currentLang]?.form_success || 'Message sent successfully!';
-      statusDiv.textContent = successMessage;
-      statusDiv.className = 'form-status success';
-      form.reset();
-    } else {
-      const errorText = await response.text();
-      console.error('Form submission error:', errorText);
-      throw new Error('Submission failed');
+    // 1. HTML validation
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      form.reportValidity();
+      return;
     }
-  } catch (error) {
-    const errorMessage = translations[currentLang]?.form_error || 'An error occurred. Please try again.';
-    statusDiv.textContent = errorMessage;
-    statusDiv.className = 'form-status error';
-  }
 
-  submitBtn.disabled = false;
-  submitBtn.textContent = translations[currentLang]?.send || originalText;
+    // 2. Phone validation
+    const phoneRegex = /^[+0-9\s()-]{6,20}$/;
+
+    if (!phoneRegex.test(phone.value)) {
+      e.preventDefault();
+
+      phone.setCustomValidity("Please enter a valid phone number");
+      phone.reportValidity();
+
+      return;
+    }
+  });
 });
+
+
+
+
+// ENABLE EVERYTHING COMMENTED BELOW WHEN CAPCHA IS DISABLED
+
+// Contact Form Submission
+// const form = document.querySelector('.contact-form');
+// const submitBtn = form?.querySelector('button[type="submit"]');
+// const statusDiv = document.getElementById('form-status');
+
+// form?.addEventListener('submit', async function (e) {
+//   e.preventDefault();
+
+//   const currentLang = localStorage.getItem('language') || 'de';
+//   const loadingText = translations[currentLang]?.form_loading || 'Sending...';
+//   const originalText = submitBtn.textContent;
+
+//   submitBtn.disabled = true;
+//   submitBtn.textContent = loadingText;
+
+//   const formData = new FormData(form);
+
+//   try {
+//     const response = await fetch(form.action, {
+//       method: form.method || 'POST',
+//       body: formData,
+//       headers: {
+//         'Accept': 'application/json'
+//       }
+//     });
+
+//     if (response.ok) {
+//       const successMessage = translations[currentLang]?.form_success || 'Message sent successfully!';
+//       statusDiv.textContent = successMessage;
+//       statusDiv.className = 'form-status success';
+//       form.reset();
+//     } else {
+//       const errorText = await response.text();
+//       console.error('Form submission error:', errorText);
+//       throw new Error('Submission failed');
+//     }
+//   } catch (error) {
+//     const errorMessage = translations[currentLang]?.form_error || 'An error occurred. Please try again.';
+//     statusDiv.textContent = errorMessage;
+//     statusDiv.className = 'form-status error';
+//   }
+
+//   submitBtn.disabled = false;
+//   submitBtn.textContent = translations[currentLang]?.send || originalText;
+// });
