@@ -36,7 +36,9 @@
         "tax_number_label": "Tax number:",
         "our_phone": "Phone:",
         "phone": "Phone",
-        "phone_placeholder": "Phone Number"
+        "phone_placeholder": "Phone Number",
+        "opening_hours_label": "Opening hours:",
+        "opening_hours": "Mon - Fri 8:00 - 16:00"
     },
     "sk": {
         "contact": "Kontakt",
@@ -75,7 +77,9 @@
         "tax_number_label": "Daňové číslo:",
         "our_phone": "Telefón:",
         "phone": "Telefón",
-        "phone_placeholder": "Telefónne číslo"
+        "phone_placeholder": "Telefónne číslo",
+        "opening_hours_label": "Otváracie hodiny:",
+        "opening_hours": "Po - Pia 8:00 - 16:00"
     },
     "de": {
         "contact": "Kontakt",
@@ -114,6 +118,8 @@
         "tax_number_label": "Steuernummer:",
         "our_phone": "Telefon:",
         "phone": "Telefon",
-        "phone_placeholder": "Rufnummer"
+        "phone_placeholder": "Rufnummer",
+        "opening_hours_label": "Öffnungszeiten:",
+        "opening_hours": "Mo - Fr 8:00 - 16:00"
     }
 }
