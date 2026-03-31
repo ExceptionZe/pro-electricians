@@ -8,13 +8,37 @@ fetch('translations.json')
   .then(data => {
     translations = data;
 
-    const savedLang = localStorage.getItem('language') || 'de';
+    const hostname = window.location.hostname;
+
+    let defaultLang = 'de';
+
+    if (hostname === 'azbau.sk') {
+      defaultLang = 'sk';
+    }
+
+    const savedLang = localStorage.getItem('language') || defaultLang;
     changeLanguage(savedLang);
   })
   .catch(error => console.error("Error loading translations:", error));
 
 // Language Switcher
 function changeLanguage(lang) {
+  const currentDomain = window.location.hostname;
+
+  // ✅ redirect MUSÍ byť skôr
+  if (lang === 'sk' && !currentDomain.includes('azbau.sk')) {
+    localStorage.setItem('language', 'sk');
+    window.location.href = 'https://azbau.sk';
+    return;
+  }
+
+  if ((lang === 'de' || lang === 'en') && !currentDomain.includes('azbau.eu')) {
+    localStorage.setItem('language', lang);
+    window.location.href = 'https://azbau.eu';
+    return;
+  }
+
+  // až potom kontrola translations
   if (!translations[lang]) return;
 
   document.querySelectorAll("[data-lang]").forEach(el => {
